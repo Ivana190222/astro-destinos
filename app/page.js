@@ -30,13 +30,13 @@ export default function Home() {
 
       <main className="relative z-10">
         {/* Hero Section */}
-        <section className="pt-32 pb-20 px-4">
+        <section className="pt-28 md:pt-32 pb-16 md:pb-20 px-4">
           <div className="max-w-7xl mx-auto text-center">
             <motion.h1
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
-              className="text-6xl font-bold bg-gradient-to-r from-purple-400 to-pink-400 text-transparent bg-clip-text mb-6"
+              className="text-4xl md:text-5xl lg:text-6xl font-bold bg-gradient-to-r from-purple-400 to-pink-400 text-transparent bg-clip-text mb-4 md:mb-6"
             >
               Descubre tu Destino Astral
             </motion.h1>
@@ -44,7 +44,7 @@ export default function Home() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
-              className="text-xl text-purple-200 mb-12 max-w-2xl mx-auto"
+              className="text-lg md:text-xl text-purple-200 mb-8 md:mb-12 max-w-2xl mx-auto px-2"
             >
               Explora el fascinante mundo de la astrología y descubre cómo los astros influyen en tu vida.
             </motion.p>
@@ -52,17 +52,17 @@ export default function Home() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}
-              className="flex justify-center space-x-6"
+              className="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-6 px-4"
             >
               <Link
                 href="/carta-astral"
-                className="px-8 py-3 bg-purple-600 hover:bg-purple-700 rounded-lg text-white font-medium transition-colors"
+                className="px-6 md:px-8 py-3 bg-purple-600 hover:bg-purple-700 rounded-lg text-white font-medium transition-colors text-center"
               >
                 Mi Carta Astral
               </Link>
               <Link
                 href="/compatibilidad"
-                className="px-8 py-3 bg-pink-600 hover:bg-pink-700 rounded-lg text-white font-medium transition-colors"
+                className="px-6 md:px-8 py-3 bg-pink-600 hover:bg-pink-700 rounded-lg text-white font-medium transition-colors text-center"
               >
                 Compatibilidad Amorosa
               </Link>
@@ -71,49 +71,49 @@ export default function Home() {
         </section>
 
         {/* Features Section */}
-        <section className="py-20 px-4">
+        <section className="py-12 md:py-20 px-4">
           <div className="max-w-7xl mx-auto">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.6 }}
-              className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+              className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8"
             >
               {[
                 {
                   title: 'Carta Astral',
                   description: 'Descubre tu mapa astral personalizado y comprende tu personalidad.',
-                  icon: <FaStar className="text-4xl text-purple-400" />,
+                  icon: <FaStar className="text-3xl md:text-4xl text-purple-400" />,
                   href: '/carta-astral'
                 },
                 {
                   title: 'Compatibilidad',
                   description: 'Analiza la compatibilidad astrológica con tu pareja o amigos.',
-                  icon: <FaHeart className="text-4xl text-pink-400" />,
+                  icon: <FaHeart className="text-3xl md:text-4xl text-pink-400" />,
                   href: '/compatibilidad'
                 },
                 {
                   title: 'Tarot',
                   description: 'Consulta las cartas para obtener guía y claridad en tu vida.',
-                  icon: <FaBook className="text-4xl text-indigo-400" />,
+                  icon: <FaBook className="text-3xl md:text-4xl text-indigo-400" />,
                   href: '/tarot'
                 },
                 {
                   title: 'Horóscopo',
                   description: 'Descubre las predicciones diarias para tu signo zodiacal.',
-                  icon: <FaSun className="text-4xl text-yellow-400" />,
+                  icon: <FaSun className="text-3xl md:text-4xl text-yellow-400" />,
                   href: '/horoscopo'
                 },
                 {
                   title: 'Mitología Zodiacal',
                   description: 'Explora las historias y mitos detrás de los signos zodiacales.',
-                  icon: <FaHistory className="text-4xl text-blue-400" />,
+                  icon: <FaHistory className="text-3xl md:text-4xl text-blue-400" />,
                   href: '/mitologia'
                 },
                 {
                   title: 'Rituales',
                   description: 'Descubre rituales mágicos y ceremonias para cada ocasión.',
-                  icon: <FaMoon className="text-4xl text-indigo-300" />,
+                  icon: <FaMoon className="text-3xl md:text-4xl text-indigo-300" />,
                   href: '/rituales'
                 }
               ].map((feature, index) => (
@@ -121,18 +121,18 @@ export default function Home() {
                   key={feature.title}
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5, delay: 0.2 * index }}
-                  whileHover={{ scale: 1.05 }}
-                  className="bg-purple-900/50 backdrop-blur-sm rounded-xl p-6 border border-purple-500/20"
+                  transition={{ duration: 0.5, delay: 0.1 * index }}
+                  whileHover={{ scale: 1.03 }}
+                  className="bg-purple-900/50 backdrop-blur-sm rounded-xl p-5 md:p-6 border border-purple-500/20"
                 >
-                  <div className="flex items-center space-x-4 mb-4">
+                  <div className="flex items-center space-x-3 md:space-x-4 mb-3 md:mb-4">
                     {feature.icon}
-                    <h3 className="text-xl font-semibold text-purple-200">{feature.title}</h3>
+                    <h3 className="text-lg md:text-xl font-semibold text-purple-200">{feature.title}</h3>
                   </div>
-                  <p className="text-purple-300 mb-4">{feature.description}</p>
+                  <p className="text-sm md:text-base text-purple-300 mb-3 md:mb-4">{feature.description}</p>
                   <Link
                     href={feature.href}
-                    className="text-purple-400 hover:text-purple-300 transition-colors"
+                    className="text-purple-400 hover:text-purple-300 transition-colors inline-flex items-center text-sm md:text-base"
                   >
                     Explorar →
                   </Link>
